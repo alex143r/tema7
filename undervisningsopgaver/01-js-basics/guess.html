@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <p>Gæt et tal mellem 0-20</p>
+    <input type="text" id="gaet">
+    <button>Gæt</button>
+    <script>
+        let tal = Math.floor(Math.random() * 21);
+        console.log(tal);
+        let antalGaet = 0;
+
+        document.querySelector("button").addEventListener("click", sammenlign);
+
+        function sammenlign() {
+            var gaet = document.querySelector("#gaet").value;
+
+            console.log(gaet);
+
+            antalGaet++;
+            if (gaet == tal) {
+                window.alert(`Korrekt. Du har brugt ${antalGaet} gæt. Vil du prøve igen?`);
+                location.reload();
+            } else if (gaet > tal) {
+                console.log(`Dit gæt er for højt, prøv igen`)
+            } else if (gaet < tal) {
+                console.log(`Dit gæt er for lavt, prøv igen`)
+            }
+        }
+
+    </script>
+</body>
+
+</html>

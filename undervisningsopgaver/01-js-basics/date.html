@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <p>Indtast din alder</p>
+    <input type="text" id="din_alder">
+    <p>Indtast din dates alder</p>
+    <input type="text" id="date_alder">
+    <button>Beregn</button>
+    <script>
+        document.querySelector("button").addEventListener("click", beregn);
+
+        function beregn() {
+            let dinAlder = document.querySelector("#din_alder").value;
+            let dateAlder = document.querySelector("#date_alder").value;
+
+            let tjek = dinAlder / 2 + 7;
+
+            if (dinAlder >= 15 && dateAlder >= 15) {
+                if (dinAlder / 2 + 7 >= dateAlder || dateAlder / 2 + 7 >= dinAlder) {
+                    console.log("i overholder reglen");
+                } else {
+                    console.log("i overholder ikke reglen");
+                }
+            } else {
+                console.log(yikes);
+            }
+        }
+    </script>
+</body></html>
