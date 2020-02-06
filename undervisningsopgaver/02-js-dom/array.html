@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            color: burlywood;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="display"></ul>
+    <script>
+        let playlist = ["skål", "list", "hey", "tager hjem"];
+        playlist.forEach(sang => {
+            document.querySelector("#displayer").innerHTML += `${sang} <br>`;
+        })
+    </script>
+</body></html>
