@@ -2,66 +2,73 @@
         <html lang="en">
 
         <head>
-    <meta charset="UTF-8">
-    <title>Document</title>¨
-    <style>
-        .firkant {
-            height: 200px;
-            width: 200px;
-            line-height: 200px;
-            text-align: center;
-            background-color: green;
-        }
+            <meta charset="UTF-8">
+            <title>Document</title>¨
+            <style>
+                .firkant {
+                    height: 200px;
+                    width: 200px;
+                    line-height: 200px;
+                    text-align: center;
+                    background-color: green;
+                }
 
-        .cirkel {
-            height: 200px;
-            width: 200px;
-            line-height: 200px;
-            text-align: center;
-            border-radius: 50%;
-            background-color: red;
-        }
-    </style>
-</head>
+                .cirkel {
+                    height: 200px;
+                    width: 200px;
+                    line-height: 200px;
+                    text-align: center;
+                    border-radius: 50%;
+                    background-color: red;
+                }
 
-
-<body>
-    <div class="firkant"></div>
-    <div class="cirkel"></div>
+            </style>
+        </head>
 
 
-</body>
-<script>
-    let firkantURL = `http://mabe-kea.dk/E19/pics/frog.png`;
-    let cirkelURL = `http://mabe-kea.dk/E19/pics/pig.png`;
+        <body>
+            <div class="firkant"></div>
+            <div class="cirkel"></div>
 
-    document.addEventListener("DOMContentLoaded", start);
 
-    function start() {
-        console.log("start");
-        let firkant = document.querySelector(".firkant");
-        let cirkel = document.querySelector(".cirkel");
+        </body>
+        <script>
+            let firkantURL = `http://mabe-kea.dk/E19/pics/frog.png`;
+            let cirkelURL = `http://mabe-kea.dk/E19/pics/pig.png`;
 
-        firkant.innerHTML = `<img src= ${firkantURL} alt="grøn frø">`;
-        cirkel.innerHTML = `<img src= ${cirkelURL} alt="rød gris" >`;
+            document.addEventListener("DOMContentLoaded", start);
 
-        firkant.addEventListener("click", flyt);
-        cirkel.addEventListener("click", stop);
+            function start() {
+                console.log("start");
+                let firkant = document.querySelector(".firkant");
+                let cirkel = document.querySelector(".cirkel");
+                //let cirkel = document.querySelector("div:nth-child(2)");
 
-        function flyt() {
-            let firkantStart = firkant.innerHTML;
-            firkant.innerHTML = cirkel.innerHTML;
-            cirkel.innerHTML = firkantStart;
-        }
 
-        function stop() {
-            firkant.removeEventListener("click", flyt);
-            firkant.style.transition = "1.5s";
-            firkant.style.backgroundColor = "red";
-            cirkel.style.transition = "1.5s";
-            cirkel.style.transform = "scale(0)";
 
-        }
+                firkant.innerHTML = `<img src= ${firkantURL} alt="grøn frø">`;
+                cirkel.innerHTML = `<img src= ${cirkelURL} alt="rød gris" >`;
 
-    }
-</script></html>
+                firkant.addEventListener("click", flyt);
+                cirkel.addEventListener("click", stop);
+
+                function flyt() {
+                    let firkantStart = firkant.innerHTML;
+                    firkant.innerHTML = cirkel.innerHTML;
+                    cirkel.innerHTML = firkantStart;
+                }
+
+                function stop() {
+                    firkant.removeEventListener("click", flyt);
+                    firkant.style.transition = "1.5s";
+                    firkant.style.backgroundColor = "red";
+                    cirkel.style.transition = "1.5s";
+                    cirkel.style.transform = "scale(0)";
+
+                }
+
+            }
+
+        </script>
+
+        </html>

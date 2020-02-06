@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -7,6 +8,7 @@
         body {
             color: burlywood;
         }
+
     </style>
 </head>
 
@@ -14,10 +16,15 @@
     <ul id="display"></ul>
     <script>
         let playlist = ["skål", "list", "hey", "tager hjem"];
-        playlist.forEach(sang => {
-            document.querySelector("#displayer").innerHTML += `${sang} <br>`;
+        playlist.forEach(song => {
+            let element = document.createElement("li");
+            let mySong = document.createTextNode(song);
+            element.appendChild(mySong);
+            document.querySelector("#display").appendChild(element);
+            //document.querySelector("#display").innerHTML += `${song} <br>`;
         })
+
     </script>
-</body></html>
+</body>
 
-
+</html>
